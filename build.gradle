@@ -1,0 +1,43 @@
+plugins {
+    id 'java'
+}
+
+//compileJava   {
+//    sourceCompatibility = '1.8'
+//    targetCompatibility = '1.8'
+//}
+
+group 'uwu.nekonya'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+    mavenLocal()
+    maven { url 'https://jitpack.io' }
+}
+
+ext {
+    mindustryVersion = 'v140.2'
+}
+
+dependencies {
+    implementation("com.github.Anuken.Arc:arcnet:$mindustryVersion")
+    implementation("com.github.Anuken.Arc:arc-core:$mindustryVersion")
+    implementation("com.github.Anuken.Mindustry:core:$mindustryVersion")
+}
+
+task dist(type: Jar) {
+    from files(sourceSets.main.output.classesDirs)
+    from files(sourceSets.main.output.resourcesDir)
+    from { configurations.runtimeClasspath.collect { it.isDirectory() || !it.name.endsWithAny(".zip", ".jar") ? it : zipTree(it) } }
+
+    archiveFileName = "botnet"
+
+    manifest {
+        attributes 'Main-Class': "uwu.nekonya.Main"
+    }
+
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+}
+sourceCompatibility = JavaVersion.VERSION_16
+targetCompatibility = JavaVersion.VERSION_16

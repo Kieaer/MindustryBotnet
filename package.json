@@ -1,0 +1,27 @@
+{
+  "name": "external_daburu_riichi",
+  "version": "1.0.0",
+  "description": "chat client based on dark java magic",
+  "main": "src/node/index.js",
+  "scripts": {
+    "test": "ts-node src/main/node/index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/misaka0954/external_daburu_riichi.git"
+  },
+  "keywords": [
+    "mindustry"
+  ],
+  "author": "nekonya",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/misaka0954/external_daburu_riichi/issues"
+  },
+  "homepage": "https://github.com/misaka0954/external_daburu_riichi#readme",
+  "dependencies": {
+    "decimal.js": "^10.3.1",
+    "mindustry.js": "^0.1.5",
+    "ts-node": "^10.9.1"
+  }
+}
