@@ -9,4 +9,4 @@ _Building jar:_ `gradlew dist`
 `java -jar build/libs/botnet.jar`
 
 # Author of code
-@
+@nekonya3031 
